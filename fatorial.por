@@ -3,12 +3,13 @@ programa
 	
 	funcao inicio()
 	{
-		cadeia jardim = "da o butiquin"
-		se(jardim == "da o butiquin"){
-			escreva("gosta de homens grandes e peludos")
-		}senao{
-			escreva("macho alfa")
-		}
+		inteiro n = 5
+		inteiro fatorial = 1
+		para(inteiro i = 1; i <= n; i++){
+ 		 fatorial =  fatorial * i
+ 
+}
+		escreva(fatorial)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -16,7 +17,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 187; 
+ * @POSICAO-CURSOR = 48; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
