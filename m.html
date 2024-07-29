@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Botões</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            overflow: hidden; /* Impede a rolagem quando o botão se move */
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            color: #333;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative; /* Necessário para o movimento do botão */
+        }
+        .button-sim {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button-nao {
+            background-color: #f44336;
+            color: white;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teu cu</h1>
+        <div class="button-container">
+            <button id="button-sim" class="button button-sim"><a href="/n.html">Sim</a></button>
+            <button id="button-nao" class="button button-nao">Não</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('button-nao').addEventListener('click', function() {
+            const buttonNao = this;
+            
+            let currentPosition = 0; // Posição inicial
+            
+            function moveButton() {
+                const step = 10; // Pixels para mover a cada intervalo
+                const maxPosition = window.innerWidth; // Largura da janela para definir o limite
+                
+                // Atualiza a posição
+                currentPosition += step;
+                
+                // Move o botão para a nova posição
+                buttonNao.style.transform = `translateX(${currentPosition}px)`;
+                
+                // Se o botão ainda estiver na tela, continue movendo
+                if (currentPosition < maxPosition) {
+                    requestAnimationFrame(moveButton);
+                }
+            }
+            
+            // Inicia o movimento
+            moveButton();
+        });
+    </script>
+</body>
+</html>
